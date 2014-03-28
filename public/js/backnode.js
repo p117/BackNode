@@ -97,6 +97,9 @@ BackNode.prototype.editor = {
       });
 
 	},
+  /*
+  * insert absolute colord blocks on all editable elements.
+  */
 	insertBlock: function(window, list) {
 		var self = this;
 		var block = '<div class="backnode-editor-block" style="position:absolute;z-index:10100;background-color:red;opacity:0.3;"></div>';
@@ -138,6 +141,9 @@ BackNode.prototype.editor = {
 		});
 		this.updateBlock(this.parent.baliseSearch.getList(window.document));
 	},
+  /*
+  * Remove absolute colored block.
+  */
 	removeBlock: function(window, list) {
 		$(window).unbind('resize.backNodeEditor keyup.backNodeEditor');
 		$(window.document).find('.backnode-editor-block').remove();
@@ -147,7 +153,11 @@ BackNode.prototype.editor = {
 			delete element.backNodeEditorParent;
 		});
 	},
-	updateBlock: function(list) {
+  /*
+  * This function update the size of the absolute colored block on the editable elements.
+  * @list : result of getList(), list of all editable elements.
+	*/
+  updateBlock: function(list) {
 		$.each(list, function(key, element) {
 			if(typeof element.tagName == 'undefined') { return; }
 			var $element = $(element);
