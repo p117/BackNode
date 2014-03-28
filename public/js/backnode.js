@@ -74,6 +74,7 @@ BackNode.prototype.editor = {
     }
   },/* This method allow the user to modify a picture ( alt and src attribute ) */
   editPicture: function(picture) {
+      /*Css are inline because this pop in is append to the iframe */
       var iframe = $(this.parent.document);
       var popinpicture = '<div id="bn-popinPicture" style="display:none;position:fixed;z-index:10200;width:100%;height:100%;top:0;left:0;background:#000;background:rgba(0,0,0,0.8)"></div>';
       var alt = picture.attr('alt');
