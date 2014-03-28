@@ -118,7 +118,6 @@ BackNode.prototype.editor = {
           var top = element.offset().top;
           var left = element.offset().left;
 
-          //element.children('.backnode-editzone').offset({top: top, left: left});
           element.children('.backnode-editzone').css({top: top, left: left});
           element.children('.backnode-editzone').css({width: element.width(), height: element.height()});
         }
